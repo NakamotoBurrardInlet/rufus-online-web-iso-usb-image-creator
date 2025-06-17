@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download and Instructions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your ISO is Ready</h1>
+        <p>Click the button below to download your ISO file.</p>
+        <a href="{{ url_for('download_file', filename=filename) }}" class="download-btn">Download {{ filename }}</a>
+        
+        <div class="instructions">
+            <h2>How to Create Your Bootable USB</h2>
+            <p>
+                Because of web security, we can't directly write to your USB drive.
+                Please follow these instructions to create your bootable drive using a free and trusted tool.
+            </p>
+            <h3>Using BalenaEtcher (Recommended for all OS)</h3>
+            <ol>
+                <li>Download and install <a href="https://www.balena.io/etcher/" target="_blank">BalenaEtcher</a>.</li>
+                <li>Open BalenaEtcher.</li>
+                <li>Click "Flash from file" and select the ISO you just downloaded.</li>
+                <li>Click "Select target" and choose your USB drive.</li>
+                <li>Click "Flash!" to begin the process.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
